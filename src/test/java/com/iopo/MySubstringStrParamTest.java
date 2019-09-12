@@ -10,14 +10,14 @@ import java.util.Arrays;
 import java.util.Collection;
 
 @RunWith(Parameterized.class)
-public class MySubstrOneStringParamTest {
+public class MySubstringStrParamTest {
 
     private MySubstring substring;
     private String inputParameter;
     private int startingFrom;
     private String expectedResult;
 
-    public MySubstrOneStringParamTest(String inputParameter, int startingFrom, String expectedResult) {
+    public MySubstringStrParamTest(String inputParameter, int startingFrom, String expectedResult) {
         this.inputParameter = inputParameter;
         this.startingFrom = startingFrom;
         this.expectedResult = expectedResult;

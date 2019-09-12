@@ -8,9 +8,9 @@ import org.junit.runners.Suite;
 @Suite.SuiteClasses({
         MySubstringStrTest.class,
         MySubstringIntParamTest.class,
-        MySubstrOneStringParamTest.class,
+        MySubstringStrParamTest.class,
         MySubstrBooleanParamTest.class
 })
 
-public class SuiteTests {
+public class MySubstringTestSuite {
 }
