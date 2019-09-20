@@ -52,7 +52,6 @@ public class MySubstring {
 
         String convertedInt = Integer.toString(parameter1);
         StringBuilder stringBuilder = new StringBuilder();
-        String[] stringArray = new String[convertedInt.length()];
 
         try {
             //Starts reading from left to right.
@@ -90,9 +89,8 @@ public class MySubstring {
      * up to last character of the 1st input parameter.
      */
     public String mySubstring(String parameter1, int startIndex) {
-        String result;
-        String[] stringArray = new String[parameter1.length()];
 
+        String result;
         try {
             //starts reading from left to right
             if (startIndex >= 0) {
