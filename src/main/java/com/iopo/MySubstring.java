@@ -13,12 +13,11 @@ public class MySubstring {
      */
     public String mySubstring(String parameter1, int startIndex, int readingLength) {
         StringBuilder stringBuilder = new StringBuilder();
-        String[] stringArray = new String[parameter1.length()];
 
         try {
             //Starts reading from left to right.
             if (startIndex >= 0) {
-                for (int i = 0; i <= stringArray.length; i++) {
+                for (int i = 0; i <= parameter1.length(); i++) {
                     if (i == (startIndex + 1)) {
                         stringBuilder.append(parameter1.charAt(i - 1));
                         for (int j = i; j < (startIndex + readingLength); j++) {
@@ -28,10 +27,10 @@ public class MySubstring {
                 }
             } else {
                 //Starts reading from right to left.
-                for (int i = stringArray.length; i > 0; i--) {
-                    if (i == (stringArray.length + startIndex) + 1) {
+                for (int i = parameter1.length(); i > 0; i--) {
+                    if (i == (parameter1.length() + startIndex) + 1) {
                         stringBuilder.append(parameter1.charAt(i - 1));
-                        for (int j = i; j < ((stringArray.length + startIndex) + readingLength); j++) {
+                        for (int j = i; j < ((parameter1.length() + startIndex) + readingLength); j++) {
                             stringBuilder.append(parameter1.charAt(j));
                         }
                     }
@@ -58,7 +57,7 @@ public class MySubstring {
         try {
             //Starts reading from left to right.
             if (startIndex >= 0) {
-                for (int i = 0; i <= stringArray.length; i++) {
+                for (int i = 0; i <= convertedInt.length(); i++) {
                     if (i == (startIndex + 1)) {
                         stringBuilder.append(convertedInt.charAt(i - 1));
                         for (int j = i; j < (startIndex + readingLength); j++) {
@@ -68,10 +67,10 @@ public class MySubstring {
                 }
             } else {
                 //Starts reading from right to left.
-                for (int i = stringArray.length; i > 0; i--) {
-                    if (i == ((stringArray.length + startIndex) + 1)) {
+                for (int i = convertedInt.length(); i > 0; i--) {
+                    if (i == ((convertedInt.length() + startIndex) + 1)) {
                         stringBuilder.append(convertedInt.charAt(i - 1));
-                        for (int j = i; j < ((stringArray.length + startIndex) + readingLength); j++) {
+                        for (int j = i; j < ((convertedInt.length() + startIndex) + readingLength); j++) {
                             stringBuilder.append(convertedInt.charAt(j));
                         }
                     }
@@ -145,15 +144,12 @@ public class MySubstring {
         StringBuilder inputParameter = new StringBuilder();
         StringBuilder checkedParameter = new StringBuilder();
 
-        String[] stringArray = new String[parameter1.length()];
-        String[] param2 = new String[parameter2.length()];
-
         //starts reading from left to right
-        for (int i = 0; i < stringArray.length; i++) {
+        for (int i = 0; i < parameter1.length(); i++) {
             inputParameter.append(parameter1.charAt(i));
         }
 
-        for (int j = 0; j < param2.length; j++) {
+        for (int j = 0; j < parameter2.length(); j++) {
             checkedParameter.append(parameter2.charAt(j));
         }
 
@@ -175,10 +171,8 @@ public class MySubstring {
         StringBuilder checkedParameter = new StringBuilder();
         boolean checkIfContained = this.mySubstring(parameter1, parameter2);
 
-        String[] param2 = new String[parameter2.length()];
-
         int falseValue = 0;
-        for (int i = 0; i < param2.length; i++) {
+        for (int i = 0; i < parameter2.length(); i++) {
 
             while (!checkIfContained) {
                 falseValue = 1;
