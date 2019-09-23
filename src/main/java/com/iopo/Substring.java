@@ -1,37 +1,33 @@
 package com.iopo;
 
-public class MySubstring {
-
-
-    public MySubstring() {
-    }
+public class Substring {
 
     /**
      * This method takes 3 input parameters and returns new String object
      * containing the substring of the 1st parameter from specified startIndex
      * with the desired length specified as the 3rd parameter.
      */
-    public String mySubstring(String parameter1, int startIndex, int readingLength) {
+    public String mySubstring(String str, int startIndex, int length) {
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
             //Starts reading from left to right.
             if (startIndex >= 0) {
-                for (int i = 0; i <= parameter1.length(); i++) {
+                for (int i = 0; i <= str.length(); i++) {
                     if (i == (startIndex + 1)) {
-                        stringBuilder.append(parameter1.charAt(i - 1));
-                        for (int j = i; j < (startIndex + readingLength); j++) {
-                            stringBuilder.append(parameter1.charAt(j));
+                        stringBuilder.append(str.charAt(i - 1));
+                        for (int j = i; j < (startIndex + length); j++) {
+                            stringBuilder.append(str.charAt(j));
                         }
                     }
                 }
             } else {
                 //Starts reading from right to left.
-                for (int i = parameter1.length(); i > 0; i--) {
-                    if (i == (parameter1.length() + startIndex) + 1) {
-                        stringBuilder.append(parameter1.charAt(i - 1));
-                        for (int j = i; j < ((parameter1.length() + startIndex) + readingLength); j++) {
-                            stringBuilder.append(parameter1.charAt(j));
+                for (int i = str.length(); i > 0; i--) {
+                    if (i == (str.length() + startIndex) + 1) {
+                        stringBuilder.append(str.charAt(i - 1));
+                        for (int j = i; j < ((str.length() + startIndex) + length); j++) {
+                            stringBuilder.append(str.charAt(j));
                         }
                     }
                 }
@@ -48,9 +44,9 @@ public class MySubstring {
      * containing the substring of the 1st parameter from specified startIndex
      * with the desired length specified as the 3rd parameter.
      */
-    public Integer mySubstring(Integer parameter1, Integer startIndex, Integer readingLength) {
+    public Integer mySubstring(Integer str, Integer startIndex, Integer length) {
 
-        String convertedInt = Integer.toString(parameter1);
+        String convertedInt = Integer.toString(str);
         StringBuilder stringBuilder = new StringBuilder();
 
         try {
@@ -59,7 +55,7 @@ public class MySubstring {
                 for (int i = 0; i <= convertedInt.length(); i++) {
                     if (i == (startIndex + 1)) {
                         stringBuilder.append(convertedInt.charAt(i - 1));
-                        for (int j = i; j < (startIndex + readingLength); j++) {
+                        for (int j = i; j < (startIndex + length); j++) {
                             stringBuilder.append(convertedInt.charAt(j));
                         }
                     }
@@ -69,7 +65,7 @@ public class MySubstring {
                 for (int i = convertedInt.length(); i > 0; i--) {
                     if (i == ((convertedInt.length() + startIndex) + 1)) {
                         stringBuilder.append(convertedInt.charAt(i - 1));
-                        for (int j = i; j < ((convertedInt.length() + startIndex) + readingLength); j++) {
+                        for (int j = i; j < ((convertedInt.length() + startIndex) + length); j++) {
                             stringBuilder.append(convertedInt.charAt(j));
                         }
                     }
@@ -88,16 +84,16 @@ public class MySubstring {
      * and the specified startIndex
      * up to last character of the 1st input parameter.
      */
-    public String mySubstring(String parameter1, int startIndex) {
+    public String mySubstring(String str, int startIndex) {
 
         String result;
         try {
             //starts reading from left to right
             if (startIndex >= 0) {
-                result = this.mySubstring(parameter1, startIndex, parameter1.length() - startIndex);
+                result = this.mySubstring(str, startIndex, str.length() - startIndex);
             } else {
                 //starts reading from right to left
-                result = this.mySubstring(parameter1, startIndex, -(startIndex));
+                result = this.mySubstring(str, startIndex, -(startIndex));
             }
             return result;
         } catch (IndexOutOfBoundsException e) {
@@ -111,18 +107,18 @@ public class MySubstring {
      * and the specified startIndex
      * up to last character of the 1st input parameter.
      */
-    public Integer mySubstring(Integer parameter1, Integer startIndex) {
+    public Integer mySubstring(Integer str, Integer startIndex) {
 
-        String convertedInt = Integer.toString(parameter1);
+        String convertedInt = Integer.toString(str);
         int result;
 
         try {
             //starts reading from left to right
             if (startIndex >= 0) {
-                result = this.mySubstring(parameter1, startIndex, convertedInt.length() - startIndex);
+                result = this.mySubstring(str, startIndex, convertedInt.length() - startIndex);
             } else {
                 //starts reading from right to left
-                result = this.mySubstring(parameter1, startIndex, -(startIndex));
+                result = this.mySubstring(str, startIndex, -(startIndex));
             }
             return result;
         } catch (IndexOutOfBoundsException e) {
@@ -137,18 +133,18 @@ public class MySubstring {
      * and another String value, then checks to see if the latter
      * is a subset of the first one. It returns either true or false.
      */
-    public boolean mySubstring(String parameter1, String parameter2) {
+    public boolean mySubstring(String str, String str2) {
 
         StringBuilder inputParameter = new StringBuilder();
         StringBuilder checkedParameter = new StringBuilder();
 
         //starts reading from left to right
-        for (int i = 0; i < parameter1.length(); i++) {
-            inputParameter.append(parameter1.charAt(i));
+        for (int i = 0; i < str.length(); i++) {
+            inputParameter.append(str.charAt(i));
         }
 
-        for (int j = 0; j < parameter2.length(); j++) {
-            checkedParameter.append(parameter2.charAt(j));
+        for (int j = 0; j < str2.length(); j++) {
+            checkedParameter.append(str2.charAt(j));
         }
 
         if (inputParameter.toString().contains(checkedParameter.toString())) {
@@ -163,23 +159,23 @@ public class MySubstring {
      * If it is a subset, then the method returns the 1st input parameter without the subset.
      * e.g. mySubsequence("Wonderful", "ful"), the value returned being "Wonder".
      */
-    public String mySubsequence(String parameter1, String parameter2) {
+    public String mySubsequence(String str, String str2) {
 
         StringBuilder inputParameter = new StringBuilder();
         StringBuilder checkedParameter = new StringBuilder();
-        boolean checkIfContained = this.mySubstring(parameter1, parameter2);
+        boolean checkIfContained = this.mySubstring(str, str2);
 
         int falseValue = 0;
-        for (int i = 0; i < parameter2.length(); i++) {
+        for (int i = 0; i < str2.length(); i++) {
 
             while (!checkIfContained) {
                 falseValue = 1;
                 break;
             }
-            checkedParameter.append(parameter2.charAt(i));
+            checkedParameter.append(str2.charAt(i));
         }
 
-        String[] mySplitValue = parameter1.split(checkedParameter.toString());
+        String[] mySplitValue = str.split(checkedParameter.toString());
         for (String finalValue : mySplitValue) {
             inputParameter.append(finalValue);
         }

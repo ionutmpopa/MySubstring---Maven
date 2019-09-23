@@ -10,7 +10,7 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class MySubstringIntParamTest {
 
-    private MySubstring mySubstring;
+    private Substring mySubstring;
     private Integer inputNumber;
     private Integer startsFrom;
     private Integer desiredLength;
@@ -25,7 +25,7 @@ public class MySubstringIntParamTest {
 
     @Before
     public void setUp() {
-        mySubstring = new MySubstring();
+        mySubstring = new Substring();
     }
 
     @Parameterized.Parameters

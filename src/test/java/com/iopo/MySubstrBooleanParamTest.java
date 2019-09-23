@@ -13,7 +13,7 @@ import java.util.Collection;
 @RunWith(Parameterized.class)
 public class MySubstrBooleanParamTest {
 
-    private MySubstring substring;
+    private Substring substring;
     private String inputParameters;
     private String theSubstring;
     private String expectedResult;
@@ -26,7 +26,7 @@ public class MySubstrBooleanParamTest {
 
     @Before
     public void setUp() {
-        substring = new MySubstring();
+        substring = new Substring();
     }
 
     @Parameterized.Parameters

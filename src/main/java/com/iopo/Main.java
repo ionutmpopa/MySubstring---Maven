@@ -4,7 +4,7 @@ public class Main {
 
     public static void main(String[] args) {
 
-        MySubstring substring = new MySubstring();
+        Substring substring = new Substring();
 
 
         System.out.println("TEST: " + substring.mySubsequence("Wasteland", "land"));

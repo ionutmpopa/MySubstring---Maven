@@ -4,11 +4,11 @@ import org.junit.*;
 
 public class MySubstringStrTest {
 
-    public MySubstring mySubstring;
+    public Substring mySubstring;
 
     @Before
     public void setUp() {
-        mySubstring = new MySubstring();
+        mySubstring = new Substring();
     }
 
 
