@@ -9,7 +9,8 @@ import org.junit.runners.Suite;
         MySubstringStrTest.class,
         MySubstringIntParamTest.class,
         MySubstringStrParamTest.class,
-        MySubstrBooleanParamTest.class
+        MySubstrBooleanParamTest.class,
+        PalindromeParamTest.class
 })
 
 public class MySubstringTestSuite {
